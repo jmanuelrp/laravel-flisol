@@ -53,7 +53,15 @@
 		</div>
 	</nav>
 
-	@yield('content')
+	@section('content')
+		@if ($errors->any())
+			<ul class="alert alert-danger">
+			@foreach ($errors->all() as $error)
+				<li>{{$error}}</li>
+			@endforeach
+			</ul>
+		@endif
+	@show
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
