@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'Categorias@index');
 
 Route::get('home', 'HomeController@index');
 
@@ -19,3 +19,6 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::resource('categorias', 'Categorias');
+Route::resource('categorias.productos', 'ProductosCategoria');
